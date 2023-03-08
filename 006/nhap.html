@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--1 Thông qua sự kiện -->
+    <button onclick="alert('hi 1')">click1 </button>
+    <!-- 2 Thông qua khối lệnh -->
+    <button onclick="xu_ly()">click2</button>
+
+    <!-- 3// thông quang javascript -->
+    <button id="btn">click 3</button>
+
+    <script>
+
+        //2 khai báo khối lệnh
+        function xu_ly() {
+            // mã xử lý
+            alert('hi 2');
+        }
+
+
+        // tim phần tử có id là btn
+        // document.getElementById('id_phan_tu') .addEventListener ('ten_su_kien',function()
+        // {
+        //         alert('click3');
+        // });
+        
+        //3
+        document.getElementById('btn') .addEventListener ('click', function () {
+            alert('click3');
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
