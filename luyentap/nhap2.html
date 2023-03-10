@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TOI LA MAY TINH</h1>
+    <input type="text" id="1">
+    <input type="text" id="2"><br>
+    <br>
+    <select id="opera">
+        <option value="cong">cong</option>
+        <option value="tru">tru</option>
+        <option value="nhan">nhan</option>
+        <option value="chia">chia</option>
+    </select>
+    <button id="money">convert</button>
+    <script>
+        var a = document.getElementById("money").addEventListener('click',
+            function () {
+                var sothunhat = document.getElementById('1').value;
+                var sothuhai = document.getElementById('2').value;
+                var opera = document.getElementById('opera').value;
+                var sothunhat = parseInt(sothunhat);
+                var sothuhai = parseInt(sothuhai);
+                
+                switch (opera) {
+                    case "cong":
+                        alert("sothunhat + sothuhai =" + (sothunhat + sothuhai))
+                        break;
+                    case "tru":
+                        alert("sothunhat - sothuhai =" + (sothunhat - sothuhai))
+                        break;
+                    case "nhan":
+                        alert("sothunhat * sothuhai =" + (sothunhat * sothuhai))
+                        break;
+                    case "chia":
+                        alert("sothunhat / sothuhai =" + (sothunhat / sothuhai))
+                        break;
+                    default:
+                        alert("khong co phep toan")
+                }
+
+
+
+            })
+
+
+    </script>
+</body>
+
+</html>

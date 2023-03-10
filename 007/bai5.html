@@ -13,49 +13,42 @@
     <input type="text" id="1">
     <input type="text" id="2"><br>
     <br>
-    <button id="cong">Cong</button>
-    <button id="tru">tru</button>
-    <button id="nhan">nhan</button>
-    <button id="chia">chia</button>
+    <select id="opera">
+        <option value="cong">cong</option>
+        <option value="tru">tru</option>
+        <option value="nhan">nhan</option>
+        <option value="chia">chia</option>
+    </select>
+    <button id="money">convert</button>
     <script>
-        document.getElementById('cong').addEventListener('click', function () {
-            var a = document.getElementById('1').value;
-            var b = document.getElementById('2').value;
-            a = parseInt(a)
-            b = parseInt(b)
-            c = a + b
-            document.write(c);
-        })
-        document.getElementById('tru').addEventListener('click', function () {
-            var a = document.getElementById('1').value;
-            var b = document.getElementById('2').value;
-            a = parseInt(a)
-            b = parseInt(b)
-            c = a - b
-            document.write(c);
-        })
-        document.getElementById('nhan').addEventListener('click', function () {
-            
-            var a = document.getElementById('1').value;
-            var b = document.getElementById('2').value;
-            a = parseInt(a)
-            b = parseInt(b)
-            c = a * b
-            document.write(c);
-        })
-        document.getElementById('chia').addEventListener('click', function () {
-            var a = document.getElementById('1').value;
-            var b = document.getElementById('2').value;
-            a = parseInt(a)
-            b = parseInt(b)
-            c = a / b
-            document.write(c);
-        })
+        var a = document.getElementById("money").addEventListener('click',
+            function () {
+                var sothunhat = document.getElementById('1').value;
+                var sothuhai = document.getElementById('2').value;
+                var opera = document.getElementById('opera').value;
+                var sothunhat = parseInt(sothunhat);
+                var sothuhai = parseInt(sothuhai);
+                
+                switch (opera) {
+                    case "cong":
+                        alert("sothunhat + sothuhai =" + (sothunhat + sothuhai))
+                        break;
+                    case "tru":
+                        alert("sothunhat - sothuhai =" + (sothunhat - sothuhai))
+                        break;
+                    case "nhan":
+                        alert("sothunhat * sothuhai =" + (sothunhat * sothuhai))
+                        break;
+                    case "chia":
+                        alert("sothunhat / sothuhai =" + (sothunhat / sothuhai))
+                        break;
+                    default:
+                        alert("khong co phep toan")
+                }
+            })
 
 
     </script>
-
-
 </body>
 
 </html>
