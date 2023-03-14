@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính chỉ số cân nặng</h1>
+    Nhap chieu cao: (m) <input type="Text" id="height" value="">
+    <br>
+    <br>
+    Nhap can nang: (kg) <input type="Text" id="weight" value="">
+    <br>
+    <br>
+    <button id="result">Kiểm Tra</button><br>
+    <script>
+        document.getElementById("result").addEventListener('click', function (){
+           var cao = document.getElementById("height").value;
+           var nang = document.getElementById("weight").value;
+           var cao = parseInt(cao)
+           var nang = parseInt(nang)
+
+            bmi = nang / (cao ^ 2)
+            
+            if(bmi < 18){
+                alert("thieu can");
+            }
+            else if(bmi < 25){
+                alert("binh thuong");
+            }
+            else if(bmi < 30){
+                alert("thua can");
+            }else{
+                alert("beo phi");
+            }
+        })
+    </script>
+</body>
+</html>
