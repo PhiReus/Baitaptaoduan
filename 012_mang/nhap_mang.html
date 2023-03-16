@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>//Khai báo
+        var Array_name = [item1, item2, item3];
+  //cach1: var c02 = [Phi, Cuong, Long, Hieu, Khuong]
+        var Array_name = new Array(item1, item2,);
+  //cach2: var c02 = new Array(Phi, Long , Hieu, Khuong, Cuong)
+
+            //for_in
+    var array = [1,2,3,4,5,6,7,8,9,10];
+    for (var element in array) {
+        console.log("element =" + array[element]);
+    }
+    //tuong duong voi cau lenh
+    for (var i = 0;i < numbers.length; i++){
+        console.log("element =" + numbers[i]);
+    }
+
+    //Duyệt các phần tử của mảng với for
+    for(i = 0;i <cars.length; i++){
+        text += cars[i] + "<br>";
+    }
+    //khoi tao mang hai chieu
+    var QuangTri = [
+        ['DongHa', 'TXQT', 'Trieu Phong']
+        ['Trieu Son', 'Trieu Trung', 'Trieu Trach']
+        ['Linh Chieu', 'Ai Tu', 'Dong Van']
+    ]
+    //Duyet mang hai chieu,hien thi phan tu
+    for(var i = 0;i < QuangTri.length; i++){
+        for(var j = 0;j < QuangTri[i].length; j++){
+            document.write(QuangTri[i][j] + '<br/>')
+        }
+    }
+
+    //Tinh tong cac phan tu so
+    var total = 0;
+    for (var a = 0;a < tong.length; a++){
+        for (var b = 0;b < tong[a].length; b++){
+             total += tong[a][b];
+        }
+    }
+
+    
+    
+    </script>
+</body>
+</html>
