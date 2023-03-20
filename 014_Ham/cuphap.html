@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //cu phap khai bao ham
+    function Ten_ham(thamso1,thamso2){
+            caulenh 
+    }
+       //sudungham
+       var num1 = 20;
+       var num2 = 14;
+       var result = sum(num1, num2);
+       alert(result);
+    </script> 
+    <p onclick="xu_ly()">Click</p>
+    <script>
+       //ham khong tham so
+        function xu_ly(){
+            alert("Hello")
+        }
+       //ham co tham so,tu khoa return
+        function sum(a,b){
+            return a + b;
+        }
+        var total = sum(4,5);
+        alert(total);
+    </script>  
+    <!-- xây dựng hàm để tính bình phương của một số -->
+    <script>
+        function square(number){
+            var result = number * number
+            return result;
+        }
+        
+        var squareOf2 = square(2);
+        document.write("square of 2 is : " + squareOf2 + "<br>")
+        
+        var squareOf9 = square(9);
+        document.write("square of 9 is : " + squareOf9 )
+    </script>
+    <!-- or -->
+        square of <input type="text" id="input" oninput="calculate()"/> is :
+        <span id="result" ></span>
+        <script>
+             function square(number){
+            var result = number * number
+            return result;
+        }
+
+            function calculate() {
+                var input = document.getElementById("input").value;
+                var result = square(input);
+                document.getElementById("result").innerHTML = result; 
+            }
+        </script>
+        <script>
+            //doi so cua ham
+            function value(doiso1,doiso2,doisoN){
+                //mã
+            }
+
+            function value(){
+                var a = x[0];
+                var b = x[1];
+            }
+            function value(){
+                //truy xuat do dai cua doi tuong a
+                var aLength = a.aLength;
+                for(var i = 0;i < aLength; i++){
+                   // xu ly tung doi so i
+                }
+            }
+        </script>
+        <script>
+            //Giá trị trả về
+            function a(x){
+                return x * 2;
+            }
+            var number = 20;
+            var result = a(number);
+            alert(result);
+            //vidu cau lenh return trong khoi lenh dieu kien
+            function a(x){
+                if(x == 1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        </script>
+        <script>
+            //goi ham
+            function a() {
+                var total = 0;
+                return total;
+            }
+            var result = a();
+            alert("the total is " + result);
+            //ham vo danh
+            var a = function(b,c){
+                return a/b;
+            }
+            //Bao đóng – Closure
+            function a() {
+                var num = 10;
+                function shownum(){
+                    alert(num);
+                }
+                return shownum();
+            }
+            var b = a();
+            a();
+        </script>
+</body>
+</html>

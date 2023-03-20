@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    //bai1
+        function num(x) {
+            var min = x[0];
+            for (var i = 1; i < x.length; i++) {
+                if (x[i] < min) {
+                    min = x[i];
+                }
+            } return min;
+        } 
+
+        var x = [37, 5, 100, 8, 41, 25, 15]
+        var min = num(x);
+        document.write(min);
+  </script>
+    
+    <script>
+        //bai2
+        function num1(x1) {
+            var min = x[0];
+            for(i = 1;i < x1.length; i++){
+                if(x1[i] < min){
+                    min = x1[i];
+                }
+            }   return min;
+        }
+
+        var x1 = [317, 54, 100, 2, 41, 5, 41];
+        var min = num(x1)
+        alert(min);
+    </script>
+
+    <script>
+        //bai3
+        function num(x2){
+            if(x2.length == 0) {
+                return -1;
+            }
+           
+        var min = x2[0];
+        for(var i = 1;i < x2.length; i++){
+            if(x2[i] < min){
+                min = x2[i];
+            }
+        }   return min;
+    }  
+        var x2 = [];
+        var min = num(x2);
+        alert(min);
+    </script>
+</body>
+
+</html>
+
+
+

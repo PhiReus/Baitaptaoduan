@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="string">Nhập từ: </label>
+    <input type="text" name="" id="string">
+    <button onclick="Xu_ly()">Dịch</button>
+    <p id="result"></p>
+    <script>
+        function Xu_ly() {
+
+            let EL = ["dog", "cat", "bird", "pig"];
+            let TV = ["chó", "mèo", "chim", "lợn"];
+
+            let string = document.getElementById("string").value;
+            let index_eng = 0;
+            let result = "";
+            for (let i = 0; i < EL.length; i++) {
+                if (string == EL[i]) {
+                    index_eng = i;
+                    for (let j = 0; j < TV.length; j++) {
+                        if (index_eng == j) {
+                            result = TV[j];
+                        }
+                    }
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //khai báo mãng 2 chiều
+        //cuphap : [kiểu_dử_liệu] Tên_mãng[][] = new [kiểu_dử_liệu] [so_hang][so_cot];
+        //cach1
+        var Codegyms = [
+            ["c01", "c02", "c03", "c04"],
+            ["c05", "c06", "c07", "c08"],
+            ["c09", "c10", "c11", "c12"]
+        ];
+        //cach2
+        // var Codegyms = new Araay(4);
+        // for(var i = 0;i < 4; i++){
+        //     Codegyms[i] = new Array(4)
+        // } 
+        console.log(Codegyms);
+        //duyệt mãng đa chiều
+        for (var i = 0; i < Codegyms.length; i++) {
+            for (var j = 0; j < Codegyms[i].length; j++) {
+                document.write(Codegyms[i][j] + "<br/>");
+            }
+        }
+        //khởi tạo giá trị ngẫu nhiên
+        var matrix = new Array(10).fill(new Array(10));
+
+        for (var i = 0; i < matrix.length; i++) {
+            for (j = 0; j < matrix[i].length; i++) {
+                matrix[i][j] = Math.floor((Math.random() * 100) + 1);
+            }
+        }
+        //Hien thi cac phan tu cua mang
+        for (var i = 0; i < matrix.length; i++) {
+            for (var j = 0; j < matrix[i].length; j++) {
+                console.log(matrix[i][j] + "");
+            }
+        }
+        //tinh tong cac phan tu so
+        for (var i = 0; i < matrix.length; i++) {
+            for (var j = 0; j < matrix[i].length; j++) {
+                total += matrix[i][j];
+            }
+        }
+        //hiển thị vị trí của từng phần tử
+        var numbers = []
+
+        for (h = 0; h < 3; h++) {
+            numbers[h] = []
+            for (c = 0; c < 3; c++) {
+                numbers[h][c] = h + "-" + c
+            }
+
+        }
+        console.log(numbers);
+    </script>
+</body>
+
+</html>
