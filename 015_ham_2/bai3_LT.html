@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //bai2
+        function value(number) {
+            return number += 1;
+        }
+        let numbe1r = 5;
+        console.log(value(numbe1r));
+
+        //bai3
+        function sum(a, b) {
+            if (a > b) {
+                alert("thong bao")
+            } else {
+                return total = a + b;
+            }
+        } var total = sum(4, 5)
+        document.write(total);
+        //bai4
+        function addNumbers() {
+            firstNum = 4;
+            seconNum = 8;
+            result = firstNum + seconNum;
+            return result;
+        }
+        result = 0;
+        result = addNumbers();
+        alert(addNumbers());
+
+        //bai5
+        var van1 = ["a", "b", "c", "d", "e", "f"]
+        var van2 = ["a1", "b2", "c3", "d4", "e5", "f6"]
+
+        function check(name) {
+            var a = 0;
+            var result = "";
+            for (var i = 0; i < van1.length; i++) {
+                if (name == van1[i]) {
+                    a = i;
+                    for (var j = 0; j < van2.length; j++) {
+                        if (a == j) {
+                            result = van2[j];
+                            return result;
+                        } else {
+                            result = "Không tìm thấy "
+                            return result;
+                        }
+                    }
+                } else {
+                    result = "Không tìm thấy ";
+                    return result;
+                }
+            }
+
+        }
+        var name = prompt("Nhập vào: ")
+        document.write(check(name));
+
+
+
+
+    </script>
+</body>
+
+</html>

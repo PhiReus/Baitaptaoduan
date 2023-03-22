@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //doi tuong arguments
+        function writeLog() {
+            console.log(arguments)
+        }
+        writeLog("log1", "log2", "log3")
+
+        // vong for of
+        function writeLog() {
+            var a = "";
+            for (var b of arguments) {
+                a += `${b} - `
+            }
+            console.log(a);
+        }
+        writeLog("log1", "log2", "log3")
+        
+        //truyen tham tri
+        
+        function square(x) {
+            x = x * x;
+        }
+        var y = 10;
+        square(y);
+        console.log(y);
+
+        //truyen tham chieu
+        
+        function QuangTri(DongHa) {
+            DongHa.isOn = True;
+        }
+        var TX = {
+            isOn: false
+        };
+        QuangTri(TX);
+        console.log(TX.isOn);
+    </script>
+</body>
+</html>

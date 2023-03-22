@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // bai1
+
+        function squae(number) {
+            var result = number * number;
+            return result;
+        }
+        var binhphuong = squae(5);
+        document.write(binhphuong);
+
+        bai2
+
+        function area(r) {
+           const PI = 3.14;
+           var result = r * r * 3.14;
+           return result;  
+        }
+
+        var area = area(5);
+        document.write(area);
+
+        //bai3
+        var a = prompt("nhap so can tinh")
+
+        function tinhgiaithua(b) {
+            gt=1
+            if (b == 0) {
+                alert('day la so 0')
+            }
+            else {
+                for(i = 1;i <= b ; i++){
+                   gt = gt * i
+                }
+                alert(gt);    
+            }
+
+        } tinhgiaithua(a);
+
+        //bai4
+
+        function a(x) {
+            if (x == number){
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+        //bai5
+        function num(a,b,c) {
+            if(a > b && a > c){
+                return a;
+            }
+            else if (b > a && b > c){
+                return b;
+            }
+            else {
+                return c;
+            }
+        }
+        i = num(2,5,6)
+        document.write(i)
+
+        //bai6
+
+        function a(x) {
+            if (x == 0){
+                return 0;
+            }
+            else if (x < 1) {
+
+            }
+            else{
+                alert(x + "la so nguyen duong")
+            }
+        }a(-1)
+
+        // bai7
+        function sum(a,b) {
+         var c = a;
+             a = b;
+             b = c;
+             return a,b;
+        }i = sum(a,b);
+        document.write(i);
+
+        //bai8
+        var x = ['a','b','c','d'];
+
+        function Name(n) {
+            n = n.reverse()
+            console.log(n);
+        }
+        Name(x);
+
+        //bai9
+
+        var a = ["g", "h", "j", "k", "l","g"];
+
+        function kitu(u) {
+            s = prompt('nhap ki tu')
+            n = 0;
+            for (i = 0; i < u.length; i++) {
+                if (u[i] == s) {
+                    n=n+1
+                }
+            }
+            if (n == 0) {
+                alert("-1")
+            } else {
+                alert("so lan xuat hien cua " + s + " la " + n)
+            }
+        } kitu(a);
+
+    </script>
+</body>
+
+</html>
