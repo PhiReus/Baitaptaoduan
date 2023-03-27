@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+      //su dung function
+      function SMS(age,name){
+        this.age = age;
+        this.name = name;
+        this.abc = function() {
+            return this;
+        }
+      }
+      var sms = new SMS(24,'Phi')
+      console.log(sms.abc());
+      
+      //su dung object
+      var Student = {
+        name : 'Phi',
+        age : 24,
+        myin4 : function() {
+            return this.name + ' ' + this.age;
+        }
+      }
+      console.log(Student.myin4());
+
+      //su dung Singleton Object
+      var SMS = new function() {
+        this.age = '24';
+        this.name = 'phi';
+        this.abc = function() {
+            return this.name +' '+ this.age 
+        }
+      }
+      console.log(SMS.abc());
+    </script>
+
+</body>
+
+</html>

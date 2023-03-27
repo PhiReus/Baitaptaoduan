@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function compareTriplets(a, b) {
+            var alice = 0;
+            var bob = 0;
+            var tong = [];
+            for (var i = 0; i < a.length; i++) {
+                    if (a[i] > b[i]) {
+                        alice += 1;
+                    }
+                     if (a[i] < b[i]) {
+                        bob += 1;
+                    }
+            }   tong.push(alice, bob);
+                return tong;
+        }
+        var a = [1,2,3];
+        var b = [3,2,1];
+        console.log(compareTriplets(a, b))
+    </script>
+</body>
+</html>

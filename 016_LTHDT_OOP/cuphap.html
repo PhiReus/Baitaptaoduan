@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Class va Object
+        function student(id, name, address) {
+            this.id = id;
+            this.name = name;
+            this.address = address;
+            this.getInfor = function () {
+                return "id = " + this.id + " name = " + this.name + " address = " + this.address;
+            }
+        }
+        var student = new student(24, "Nguyen Phi", "Linh Chieu");
+        console.log(student.getInfor());
+    </script>
+    <!-- khoi tao doi tuong -->
+    <script>
+        var student = {
+            id: 24,
+            name: "Nguyen Phi",
+            address: "Linh Chieu",
+            getInfor: function () {
+                return "id = " + this.id + " name = " + this.name + " address = " + this.address;
+            }
+        }
+        console.log(student.address);
+        console.log(student.getInfor());
+    </script>
+    <script>
+        // khoi tao doi tuong
+        var ObjectName = {
+            name: "",
+            age: ""
+        };
+        or
+        var ObjectName = { name: "Phi", age: 24 };
+
+        //sudung for in de truy xuat
+        var person = { firstname: "Nguyen", lastname: "Phi", age: 25 }
+        for (x in person) {
+            sms += person[x];
+        }
+        //gan gia tri cho doi tuong mang
+        var Comment = {
+            title: "",
+            content: "",
+            email: "",
+            fullname: ""
+        };
+        var Comments = [];
+        Comments[0] = Comment;
+        Comments[0].title = "tieu de";
+        alert(Comments[0].title);
+        //vidu 
+        var person = {
+            name: ['Phi', 'Nguyen'],
+            age: 24,
+            adress: 'Linh Chieu',
+            interests: ['music', 'soccer'],
+            get: function () {
+                return "Name=" + this.name[0] + "Age=" + this.age + "Interests=" + this.interests[0];
+            },
+            sms: function () {
+                return (this.name[1] + ' ' + 'is' + this.age + ' years old. He likes ' + this.interests[1])
+            }
+        }
+        //them thuoc tinh va phuong thuc moi
+        person['eyes'] = 'hazel';
+        person.farewell = function () { alert("Bye everybody!"); }
+        person.name[0] = 'Cratchit';
+
+        //them thanh phan va gia tri moi cho object
+        var xName = 'weight';
+        var xNamevalue = '48kg';
+        person.name[0] = xNamevalue;
+
+        console.log(person['interests'][0]);
+        console.log(person.weight);
+        console.log(person.sms());
+
+        //setter --> đặt giá trị cho một thuộc tính
+        const object = {
+            set objectName(value) {
+                code
+            }
+        }
+        //getter --> lay gia tri cua 1 thuoc tinh
+        const obj = {
+            get objectName() {
+                code
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

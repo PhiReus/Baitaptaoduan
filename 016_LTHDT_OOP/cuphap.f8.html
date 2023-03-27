@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object trong javascript (c2 them ngoac vuong)
+       
+        var myInfor = {
+            name: "Phi Reus",
+            age: "24",
+            address: "Linh Chieu"
+        };
+        myInfor.email = "Phireus2002@gmail.com";
+        console.log(myInfor);  
+
+        //them keyemail
+        var sms = "email";
+        var myInfor = {
+            name: "Phi Reus",
+            age: "24",
+            address: "Linh Chieu",
+            [sms]: "Phireus2002@gmail.com",
+        
+        //lưu trử value = function
+             getName: function() {
+             return this.name
+         }
+
+        };
+        //xoakey
+        delete myInfor.age;
+        console.log(myInfor.getName());  
+
+        //function --> Phương thức / method : (Getname)
+        //Others --> Thuộc tính / property : (name,age)
+    </script>
+</body>
+</html>
