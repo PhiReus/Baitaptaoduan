@@ -1,46 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-       var Mobile = {
-        status : ['on','off'],
-        battat : ['on','off'],
-        pin : 50,
-        vung_nho1 : ['lưu tin nhắn đang soạn thảo','soan tin nhan','gửi tin nhắn'],
-        vung_nho2 : ['lưu tin nhắn trong hộp thư đến','nhận tin nhắn'],
-        vung_nho3 : ['lưu tin nhắn trong hộp đã gửi','xem tin đã gửi'],
-        getktdt : function() {
-            return 'dien thoai dang' + ' ' + this.battat[0];
-        },
-        getKiemtra : function() {
-            return 'trang thai'+ ' ' + this.status[0] + ' ' + (this.pin -1) 
-        },
-        getsacpin : function() {
-            return this.pin + 1;
-        },
-        getstn : function() {
-            return 'Dang' + ' ' + this.vung_nho1[1] +' '+ (this.pin -1)+ ' ' + 'Da' + ' ' + this.vung_nho1[0] + (this.pin -1);
-        },
-        getntn : function() {
-            return 'Da' +' '+ this.vung_nho2[1] +' '+ (this.pin -1)+ ' ' + 'Da' + ' ' + this.vung_nho3[1] + (this.pin -1);
+        let Mobile = function () {
+           
+            this.pin = 0;
+            this.soanvanban = "";
+            this.hopthuden = [];
+            this.hopthudi = [];
+            this.trangthai = false
+            
+            this.kt_trangthai = function () {
+                if (this.trangthai == true) {
+                    console.log("Dang bat");
+                } else {
+                    console.log("Dang tat");
+                }
+            }
+            this.bat = function () {
+                this.trangthai = true
+            }
+            this.tat = function () {
+                this.trangthai = false
+            }
+            this.xac = function () {
+                if (this.pin <= 100) {
+                    this.pin++;
+                } else {
+                    console.log("Dien thoai da day pin");
+                }
+            }
+            this.soantinnhan = function (noidung) {
+                if (this.trangthai == false) {
+                    console.log("Dien thoai dang tat");
+                    return false
+                }
+                this.pin--
+                this.soanvanban = noidung
+            }
+            this.nhantinnhan = function (noidung) {
+                if (this.trangthai == false) {
+                    console.log("Dien thoai dang tat");
+                    return false
+                }
+                this.pin--
+                this.hopthuden.push(noidung)
+            }
+            this.guitinnhan = function (Mobile) {
+                if (this.trangthai == false) {
+                    console.log("Dien thoai dang tat");
+                    return false
+                }
+                Mobile.nhantinnhan(this.soanvanban)
+                this.hopthudi.push(this.soanvanban)
+
+                this.soanvanban = "";
+
+                this.pin--
+            }
+            this.xemtndagui = function () {
+                if (this.trangthai == false) {
+                    console.log("Dien thoai dang tat");
+                    return false
+                }
+                this.pin--
+                console.log(this.hopthudi);
+            }
+            this.xemtndanhan = function () {
+                if (this.trangthai == false) {
+                    console.log("Dien thoai dang tat");
+                    return false
+                }
+                this.pin--
+                console.log(this.hopthuden);
+            }
         }
-       } 
-       Mobile.pin = 80;
+
+        let samsung = new Mobile();
+        for (i = 1; i <= 100; i++) {
+            samsung.xac()
+        }
+        samsung.bat()
 
 
-       console.log(Mobile.getktdt());
-       console.log(Mobile.getKiemtra());
-       console.log(Mobile.getstn());
-       console.log(Mobile.getsacpin());
-       console.log(Mobile.getntn());
-
+        let nokia = new Mobile(); 
+        for (let i = 1; i <= 100; i++) {
+            nokia.xac()
+        }
+        nokia.bat()
+        nokia.soantinnhan("xin chao")
         
+        nokia.guitinnhan(samsung)
+
+        console.log(nokia);
+        console.log(samsung);
+
     </script>
 </body>
+
 </html>

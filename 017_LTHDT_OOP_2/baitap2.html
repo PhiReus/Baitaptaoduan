@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Den  {
+            constructor() {
+            this.status;
+        }
+        bat() {
+            this.status = true;
+        }
+        tat() {
+            this.status = false;
+        }
+    }
+    class CongTac {
+        constructor (){
+            this.status
+            this.den;
+        }
+        KetNoiDen(den) {
+            this.den = den
+        }
+        bat() {
+            this.den.bat();
+        }
+        tat() {
+            this.den.tat();
+        }
+    }
+    var den = new Den()
+    var congtac = new CongTac()
+    congtac.KetNoiDen(den)
+    congtac.bat()
+    congtac.tat()
+    
+    console.log(den);
+    </script>
+</body>
+</html>

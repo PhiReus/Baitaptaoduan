@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Pin = function () {
+            this.setNangluong = function (nangluong) {
+                this.nangluong = nangluong;
+            }
+            this.getNangluong = function () {
+                return this.nangluong;
+            }
+
+            this.giamnangluong = function () {
+                if (this.nangluong > 0) {
+                    this.nangluong--;
+                }
+            }
+        }
+
+        var Den = function () {
+            this.setPin = function (pin) {
+                this.pin = pin;
+            }
+            this.getThongtinPin = function () {
+                return this.pin.getNangluong();
+            }
+            this.anhsang = function () {
+                if (this.status) {
+                    alert("thap sang")
+                }
+                else {
+                    alert("khong thap sang")
+                }
+            }
+            this.bat = function () {
+                this.status = true;
+            }
+            this.tat = function () {
+                this.status = false;
+            }
+        }
+
+        var pin = new Pin();
+        pin.setNangluong(20);
+        var den = new Den();
+        den.setPin(pin)
+
+        document.write("Thong tin pin : " + den.getThongtinPin() + "</br>");
+        den.anhsang();
+
+        document.write("Bat </br>")
+        den.bat();
+        den.anhsang();
+        document.write("Thong tin pin : " + den.getThongtinPin() + "</br>")
+
+        document.write("Tat")
+        den.tat();
+        den.anhsang();
+    </script>
+</body>
+
+</html>
