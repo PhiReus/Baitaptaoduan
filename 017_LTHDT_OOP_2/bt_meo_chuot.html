@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Rat {
+            constructor() {
+                this.name;
+                this.weight;
+                this.speed ;
+                this.status; 
+            }
+            song() {
+                this.status = true;
+            }
+            chet() {
+                this.status = false;
+            }
+            keu1(string) {
+                console.log(string);
+            }
+        }
+
+        class Cat {
+            constructor() {
+                this.name;
+                this.weight;
+                this.speed1
+            }
+            keu2(string) {
+                console.log(string);
+            }
+            bat(chuot){
+                if(this.speed1 > this.speed){
+                    console.log('meo da an duoc chuot');
+                    this.speed++;
+                }
+            }
+            an(chuot) {
+                if(this.song() == true) {
+                    console.log('meo da an chuot')
+                    this.weight++;
+                }
+            }
+        }
+        var rat = new Rat();
+        rat.keu1('meo meo')
+
+        var cat = new Cat();
+        cat.keu2('chit chit')
+
+        console.log(rat);
+        console.log(cat);
+
+    </script>
+</body>
+</html>

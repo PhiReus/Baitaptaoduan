@@ -11,9 +11,9 @@
 <body>
     <!-- bai1 -->
     <script>
-        var myColor = ["Red", "Green", "While", "Black"];
-        myColor.join();
-        document.write(myColor);
+        // var myColor = ["Red", "Green", "While", "Black"];
+        // myColor.join();
+        // document.write(myColor);
     </script>
     <!-- bai2 -->
     <script>
@@ -24,9 +24,10 @@
         for (var x = 1; x < i.length; x++) {
             if (i[x] % 2 === 0 && i[x - 1] % 2 === 0) {
                 result.push("-", i[x])
-            } else {
-                result.push(i[x])
-            }
+            } 
+            // else {
+            //     result.push(i[x])
+            // }
         }
         document.write(result.join(''))  
     </script>

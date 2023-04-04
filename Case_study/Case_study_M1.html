@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer</title>
+    <style>
+        #logo {
+            width: 100%;
+            height: 130px;
+        }
+
+        table {
+            background-color: aliceblue;
+        }
+
+        #id1 {
+            text-align: center;
+            font-size: 25px;
+            background-color: purple;
+            color: chocolate;
+
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            background-color: greenyellow;
+            margin: 0;
+        }
+
+        th,
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<img src="https://cdn.thuvienphapluat.vn//phap-luat/2022-2/NV/161222/bong-da-11.jpg" id="logo">
+<h1> QUẢN LÝ CẦU THỦ </h1>
+<table style=" border: 1px solid black; width: 700px; float: right">
+    <tr>
+        <th style="font-size: 40px" colspan="7">Danh sách cầu thủ</th>
+    </tr>
+    <tr>
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>CLB</th>
+        <th>Ảnh</th>
+        <th>Tùy chọn</th>
+
+    </tr>
+    <tbody id="list-soccer">
+    </tbody>
+</table>
+
+<table border="1" style="width: 500px; height: 300px" ;>
+    <tr id="id1">
+        <th colspan="2"> Thông tin cầu thủ</th>
+    </tr>
+
+    <tr>
+        <th>STT</th>
+        <td><input type="number" id="id"></td>
+
+    </tr>
+    <tr>
+        <th>Họ tên</th>
+        <td><input type="text" id="ten"></td>
+    </tr>
+    <tr>
+        <th>Ngày sinh</th>
+        <td><input type="text" id="ngay"></td>
+    </tr>
+    <tr>
+        <th>Giới tính</th>
+        <td><input type="text" id="gioitinh"></td>
+    </tr>
+    <tr>
+        <th>CLB</th>
+        <td><input type="text" id="clb"></td>
+    </tr>
+    <tr>
+        <th>Ảnh</th>
+        <td><input type="text" id="img"></td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>
+            <button style="background-color: teal" id="add" onclick="addsoccer()">Add</button>
+            <button style="background-color: rosybrown" id="edit" onclick="undatesoccer()">Save</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+    class QuanLiCauThu {
+        constructor(arr) {
+            this.cauthu = arr;
+        }
+        HienThi() {
+            let table = '';
+            for (let i = 0; i < this.cauthu.length; i++) {
+
+
+                table += '<tr>';
+                table += '<td>';
+                table += this.cauthu[i].id;
+                table += '</td>';
+
+                table += '<td>';
+                table += this.cauthu[i].ten;
+                table += '</td>';
+
+                table += '<td>';
+                table += this.cauthu[i].ngay;
+                table += '</td>';
+
+                table += '<td>';
+                table += this.cauthu[i].gioitinh;
+                table += '</td>';
+
+                table += '<td>';
+                table += this.cauthu[i].clb;
+                table += '</td>';
+
+                table += '<td>';
+                table += '<img width="100px" height="100px" src=" ' + this.cauthu[i].img + '">';
+                table += '</td>';
+
+                table += '<td>' +
+                    '<button style="background-color: blue; color: white "  type="button" onclick="deleteCauThu(' + i + ')">Delete</button> ' +
+                    ' <button  style="background-color: orange ; color: white" type="button" onclick="editCauThu(' + i + ')">Edit</button>' +
+                    '</td>';
+
+                table += '</tr>';
+            }
+            document.getElementById('list-soccer').innerHTML = table;
+        }
+
+        addsoccer(cauthu) {
+            this.cauthu.push(cauthu);
+        }
+
+        delete(id) {
+            this.cauthu.splice(id, 1);
+        }
+
+        TimCauthu(id) {
+            return this.cauthu[id];
+        }
+
+        edit(cauthu, id, ten, ngay, gioitinh, clb, img) {
+            cauthu.edit(id, ten, ngay, gioitinh, clb, img);
+        }
+
+    }
+
+    class CauThu {
+        constructor(id, ten, ngay, gioitinh, clb, img) {
+            this.id = id;
+            this.ten = ten;
+            this.ngay = ngay;
+            this.gioitinh = gioitinh;
+            this.clb = clb;
+            this.img = img;
+        }
+        getID() {
+            return this.id;
+        }
+        getTen() {
+            return this.ten;
+        }
+        getNgay() {
+            return this.ngay;
+        }
+        getGioiTinh() {
+            return this.gioitinh;
+        }
+        getCLB() {
+            return this.clb;
+
+        }
+        getImg() {
+            return this.img;
+        }
+        setID(id) {
+            this.id = id;
+        }
+        setTen(ten) {
+            this.ten = ten;
+        }
+        setNgay(ngay) {
+            this.ngay = ngay;
+        }
+        setGioiTinh(gioitinh) {
+            this.gioitinh = gioitinh;
+        }
+        setCLB(clb) {
+            this.clb = clb;
+        }
+        setImg(img) {
+            this.img = img;
+        }
+
+        edit(id, ten, ngay, gioitinh, clb, img) {
+            this.id = id;
+            this.ten = ten;
+            this.ngay = ngay;
+            this.gioitinh = gioitinh;
+            this.clb = clb;
+            this.img = img
+        }
+    }
+
+    let cauthu1 = new CauThu('1', "Marco Reus", '07/05/1988', 'Nam', 'Dormuntd', 'https://i.bundesliga.com/player/dfl-obj-0000o3-dfl-clu-000007-dfl-sea-0001k6.png');
+    let cauthu2 = new CauThu('2', 'Leo Messi', '19/09/1987', 'Nam', 'PSG', 'https://dailypost.ng/wp-content/uploads/2022/11/3cabcc81540d0491.jpg');
+    let cauthu3 = new CauThu('3', 'Nguyễn Huỳnh Như', '22/01/2000', 'Nữ', 'KIkada', 'https://znews-photo.zingcdn.me/w660/Uploaded/yrfjpyvslyr/2022_11_06/huynh_nhu.jpg');
+    let arr = [cauthu1, cauthu2, cauthu3];
+    let quanlicauthu = new QuanLiCauThu(arr);
+
+    function addsoccer() {
+        let id = document.getElementById('id').value;
+        let ten = document.getElementById('ten').value;
+        let ngay = document.getElementById('ngay').value;
+        let gioitinh = document.getElementById('gioitinh').value;
+        let clb = document.getElementById('clb').value;
+        let img = document.getElementById('img').value;
+
+        let cauthu = new CauThu(id, ten, ngay, gioitinh, clb, img);
+        quanlicauthu.addsoccer(cauthu);
+        quanlicauthu.HienThi();
+        clear();
+    }
+
+    function clear() {
+        document.getElementById('id').value = '';
+        document.getElementById('ten').value = '';
+        document.getElementById('ngay').value = '';
+        document.getElementById('gioitinh').value = '';
+        document.getElementById('clb').value = '';
+        document.getElementById('img').value = '';
+    }
+
+    function deleteCauThu(id) {
+        quanlicauthu.delete(id);
+        quanlicauthu.HienThi();
+    }
+
+    let cauthuID = 0;
+    function editCauThu(id) {
+        let cauthu = quanlicauthu.TimCauthu(id);
+        document.getElementById('id').value = cauthu.id;
+        document.getElementById('ten').value = cauthu.ten;
+        document.getElementById('ngay').value = cauthu.ngay;
+        document.getElementById('gioitinh').value = cauthu.gioitinh;
+        document.getElementById('clb').value = cauthu.clb;
+        document.getElementById('img').value = cauthu.img;
+
+        cauthuID = id;
+    }
+
+    function undatesoccer() {
+        let id = document.getElementById('id').value;
+        let ten = document.getElementById('ten').value;
+        let ngay = document.getElementById('ngay').value;
+        let gioitinh = document.getElementById('gioitinh').value;
+        let clb = document.getElementById('clb').value;
+        let img = document.getElementById('img').value;
+
+        let cauthu = quanlicauthu.TimCauthu(cauthuID);
+        quanlicauthu.edit(cauthu, id, ten, ngay, gioitinh, clb, img);
+        quanlicauthu.HienThi();
+        clear();
+    }
+
+    quanlicauthu.HienThi();
+</script>
+</body>
+
+</html

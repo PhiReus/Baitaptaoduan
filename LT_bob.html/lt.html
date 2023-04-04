@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //thêm '-' vào giửa hai số chẳn
+        function mang(arr){
+            for(var i = 0;i <arr.length;i++){
+                if(arr[i] % 2 === 0 && arr[i + 1] % 2 === 0){
+                    arr.splice(i+1,0,'-');
+                }
+            }
+            return arr;
+        }
+        var a = [2,2,5,4,6,8,9,84]
+        document.write(mang(a));
+    </script>
+
+    <script>
+        
+    </script>
+</body>
+
+</html>
